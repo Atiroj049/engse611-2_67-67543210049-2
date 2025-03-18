@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <div class="thumbnails">
+                <img src="https://picsum.photos/200?random=1" onclick="changeImage(this)" onmouseover="highlightImage(this)" onmouseout="resetImage(this)">
+                <img src="https://picsum.photos/200?random=2" onclick="changeImage(this)" onmouseover="highlightImage(this)" onmouseout="resetImage(this)">
+                <img src="https://picsum.photos/200?random=3" onclick="changeImage(this)" onmouseover="highlightImage(this)" onmouseout="resetImage(this)">
+                <img src="https://picsum.photos/200?random=4" onclick="changeImage(this)" onmouseover="highlightImage(this)" onmouseout="resetImage(this)">
+            </div>
+            <div class="main-image">
+                <img id="displayImage" src="https://picsum.photos/600?random=1">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function changeImage(element) {
+            document.getElementById('displayImage').src = element.src;
+        }
+        
+        function highlightImage(element) {
+            element.style.transform = "scale(1.1)";
+            element.style.border = "3px solid #007bff";
+        }
+        
+        function resetImage(element) {
+            element.style.transform = "scale(1)";
+            element.style.border = "none";
+        }
+    </script>
+</body>
+</html>
